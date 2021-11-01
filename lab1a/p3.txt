@@ -1,0 +1,14 @@
+funct main() {
+	init integer n, index, sum;
+	n = readInt();
+	init integer[n] numbers;
+	
+	numbers = readIntArray(n);
+	sum = 0;
+	index = 0;
+	while (index < n) {
+		sum = sum + numbers[index];
+		index = index + 1;
+	}
+	print(sum);
+}

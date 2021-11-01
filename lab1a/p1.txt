@@ -1,0 +1,16 @@
+funct main() {
+	init integer i1, i2, i3;
+
+	i1 = readInt();
+	i2 = readInt();
+	i3 = readInt();
+
+	test (i1 > i2) {
+		test (i1 > i3)
+			print(i1);
+		else
+			print(i3);
+	} else test (i2 > i3)
+		print(i2);
+	else print(i3);
+}

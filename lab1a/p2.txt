@@ -1,0 +1,19 @@
+funct main() {
+	init integer inputInt, div;
+	init boolean isPrime;
+
+	inputInt = readInt();
+	div = 2;
+	isPrime = true;
+
+	test (inputInt < 2)
+		isPrime = false
+	while (div * div <= inputInt) {
+		test (inputInt % div == 0)
+			isPrime = false;
+		div = div + 1;
+	}
+	test (isPrime == true)
+		print("Is prime");
+	else print("Is not prime");
+}
