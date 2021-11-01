@@ -20,7 +20,7 @@ class SymbolTable:
         # check for collision and add new token
         if self.__table[hash_value] is not None:
             new_hash = (hash_value + 1) % self.__size
-            while new_hash is not hash_value and new_hash < self.__size:
+            while new_hash != hash_value and new_hash < self.__size:
                 if self.__table[new_hash] is None:
                     hash_value = new_hash
                     break
