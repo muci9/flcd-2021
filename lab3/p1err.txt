@@ -1,0 +1,16 @@
+funct main() {
+	init integer i1, i2, i3;
+
+	i1 = 3423hab; // character sequence doesn't represent any type of token
+	i2 = readInt();
+	i3 = readInt();
+
+	test (i1 ><> i2) { // character sequence doesn't represent any type of token
+		test (i1 > i3)
+			print(i1);
+		else
+			print(i3);
+	} else test (i2 > i3)
+		print(i2);
+	else print(i3);
+}
