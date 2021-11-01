@@ -1,0 +1,80 @@
+// p1
+// computes the maximum of 3 numbers
+
+funct main() {
+	init integer i1, i2, i3;
+
+	i1 = readInt();
+	i2 = readInt();
+	i3 = readInt();
+
+	test (i1 > i2) {
+		test (i1 > i3)
+			print(i1);
+		else
+			print(i3);
+	} else test (i2 > i3)
+		print(i2);
+	else print(i3);
+}
+
+// p1err
+// computes the maximum of 3 numbers, contains 2 lexical errors
+
+funct main() {
+	init integer i1, i2, i3;
+
+	i1 = 3423hab; // character sequence doesn't represent any type of token
+	i2 = readInt();
+	i3 = readInt();
+
+	test (i1 ><> i2) { // character sequence doesn't represent any type of token
+		test (i1 > i3)
+			print(i1);
+		else
+			print(i3);
+	} else test (i2 > i3)
+		print(i2);
+	else print(i3);
+}
+
+//p2
+// computes if a number is prime
+
+funct main() {
+	init integer inputInt, div;
+	init boolean isPrime;
+
+	inputInt = readInt();
+	div = 2;
+	isPrime = true;
+
+	test (inputInt < 2)
+		isPrime = false
+	while (div * div <= inputInt) {
+		test (inputInt % div == 0)
+			isPrime = false;
+		div = div + 1;
+	}
+	test (isPrime == true)
+		print("Is prime");
+	else print("Is not prime");
+}
+
+//p3
+// computes the sum of n numbers
+
+funct main() {
+	init integer n, index, sum;
+	n = readInt();
+	init integer[n] numbers;
+	
+	numbers = readIntArray(n);
+	sum = 0;
+	index = 0;
+	while (index < n) {
+		sum = sum + numbers[index];
+		index = index + 1;
+	}
+	print(sum);
+}

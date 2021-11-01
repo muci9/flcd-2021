@@ -1,0 +1,44 @@
+PROGRAM = "funct main() {" BODY "}"
+
+BODY = (DECLLIST|CMPDSTMT) {BODY}
+
+DECLLIST = DECLARATION {DECLARATION}
+
+DECLARATION = "init" TYPE IDENTIFIER {"," IDENTIFIER} ";" | ARRAYDECL
+
+TYPE = "integer" | "boolean" | "string" | "character" | "tuple"
+
+ARRAYDECL = "init" TYPE "[" NUMBER "]" IDENTIFIER {("," IDENTIFIER)} ";"
+
+NUMBER = ("1" | "2" | .. | "9"){"0" | "1" | .. | "9"}
+
+CMPDSTMT = STMT ";" {CMPDSTMT}
+
+STMT = SIMPLSTMT | STRUCTSTMT
+
+SIMPLSTM = ASSIGNSTMT | IOSTMT
+
+ASSIGNSTMT = IDENTIFIER "=" (EXPRESSION | (EXPRESSION "," EXPRESSION))
+
+EXPRESSION = EXPRESSION ("+"|"-") TERM | TERM
+
+TERM = TERM ("*"|"/"|"%") FACTOR | FACTOR
+
+FACTOR = "(" EXPRESSION ")" | IDENTIFIER
+
+IOSTMT = IDENTFIER "=" READSTMT
+
+READSTMT = "readInt()" | "readString()" | "readBoolean()" | "readCharacter()" | "readTuple()"
+
+STRUCTSTMT = CMPDSTMT | IFSTMT | WHILESTMT
+
+IFSTMT = test(" CONDITION ")" STMT ["else" STMT]
+
+CONDITION = EXPRESSION RELATION EXPRESSION
+
+RELATION = "<" | "<=" | "==" | "!=" | ">=" | ">"
+
+WHILESTMT= while(" CONDITION ")" "{" STMT "}"
+
+
+

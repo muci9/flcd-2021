@@ -1,0 +1,33 @@
+Alphabet:
+	- a-zA-Z, all uppercase and lowercase letters of the standard English alphabet
+	- decimal digits 0-9
+
+Lexic:
+	- Special symbols, representing:
+		- operators: + - / % * = == <= >= != && ||
+		- separators: () {} [] , ; space tab newline
+		- reserved words: funct, main, init, integer, test, else, boolean, string, tuple, while, return
+
+	- Identifiers:
+		- a sequence of letters and digits, must begin with a letter, the rule is as follows:
+			IDENTIFIER = LETTER | LETTER {LETTER_DIGIT}
+			LETTER_DIGIT = LETTER | DIGIT
+			LETTER = "a" | "b" | .. | "z" | "A" | .. | "Z"
+			DIGIT = "0" | "1" | .. | "9"
+
+	- Constants:
+		CONSTANT = INTEGER | STRING | BOOLEAN | TUPLE | CHARACTER
+		INTEGER = "0" | ["+"|"-"] UNSIGNED_NUMBER
+		UNSIGNED_NUMBER = NON_ZERO_DIGIT{DIGIT}
+		NON_ZERO_DIGIT = "1" | .. | "9"
+		DIGIT = "0" | NON_ZERO_DIGIT
+
+		STRING = " CHAR_SEQ "
+		CHAR_SEQ = {LETTER|DIGIT}
+		LETTER = "a" | "b" | .. | "z" | "A" | .. | "Z"
+		DIGIT = "0" | "1" | .. | "9"
+
+		BOOLEAN = "true"| "false"
+	
+		TUPLE = "(" (INTEGER|STRING|BOOLEAN) "," (INTEGER|STRING|BOOLEAN) ")"
+		
