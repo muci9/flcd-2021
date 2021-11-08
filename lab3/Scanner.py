@@ -19,9 +19,9 @@ class Scanner:
         return tokens
 
     def __is_constant__(self, token):
-        pattern_zero = re.compile("0")
-        pattern_integer = re.compile("(\+|-){,1}1-90-9*")
-        pattern_string = re.compile("\"[a-zA-Z0-9]+\"")
+        pattern_zero = re.compile("^0$")
+        pattern_integer = re.compile("^\+|-{,1}[1-9][0-9]*$")
+        pattern_string = re.compile("^\"[a-zA-Z0-9\s]+\"$")
         return pattern_zero.match(token) or pattern_string.match(token) or pattern_integer.match(token)
 
     def __is_identifier__(self, token):
@@ -30,7 +30,7 @@ class Scanner:
 
     def __detect__(self, line):
         line = line.strip("\t\n")
-        tokens = re.split("([^a-zA-Z0-9\"])", line)
+        tokens = re.split('([^a-zA-Z0-9"])', line)
         tokens = list(filter(lambda x: x != " " and x != "" and x != "\n" and x != "\t", tokens))
         return tokens
 
@@ -49,10 +49,10 @@ class Scanner:
                         self.__generate_pif__(token, -1)
                     elif self.__is_constant__(token):
                         index = self.__st_constants.pos(token)
-                        self.__generate_pif__(0, index)
+                        self.__generate_pif__(token, index)
                     elif self.__is_identifier__(token):
                         index = self.__st_identifiers.pos(token)
-                        self.__generate_pif__(1, index)
+                        self.__generate_pif__(token, index)
                     else:
                         print("Lexical error at line: ", current_line, " on token: ", token)
                         is_correct = False

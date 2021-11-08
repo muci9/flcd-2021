@@ -1,11 +1,11 @@
 funct main() {
 	init integer i1, i2, i3;
 
-	i1 = 3423hab; // character sequence doesn't represent any type of token
+	i1 = 3423hab;
 	i2 = readInt();
 	i3 = readInt();
 
-	test (i1 ><> i2) { // character sequence doesn't represent any type of token
+	test (i1 ~ i2) {
 		test (i1 > i3)
 			print(i1);
 		else
