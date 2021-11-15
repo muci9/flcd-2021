@@ -1,0 +1,9 @@
+s0 s1 s2 s3 sf0 sf1
+1 2 3
+s0
+sf0 sf1
+s0 1 s1
+s1 1 s3
+s1 2 s2
+s3 3 sf0
+s2 3 sf1

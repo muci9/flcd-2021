@@ -1,0 +1,35 @@
+s0 s1 sf1 sf2
++ - 0 1 2 3 4 5 6 7 8 9
+s0
+sf1 sf2
+s0 0 sf1
+s0 + s1
+s0 - s1
+s0 1 sf2
+s0 2 sf2
+s0 3 sf2
+s0 4 sf2
+s0 5 sf2
+s0 6 sf2
+s0 7 sf2
+s0 8 sf2
+s0 9 sf2
+s1 1 sf2
+s1 2 sf2
+s1 3 sf2
+s1 4 sf2
+s1 5 sf2
+s1 6 sf2
+s1 7 sf2
+s1 8 sf2
+s1 9 sf2
+sf2 0 sf2
+sf2 1 sf2
+sf2 2 sf2
+sf2 3 sf2
+sf2 4 sf2
+sf2 5 sf2
+sf2 6 sf2
+sf2 7 sf2
+sf2 8 sf2
+sf2 9 sf2
